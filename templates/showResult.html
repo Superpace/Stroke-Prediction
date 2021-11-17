@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>HTML Page</title>
+    <style>
+        progress {
+            margin: auto;
+            width: 100%;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .center {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            padding: 260px 0;
+        }
+
+        progress {
+            -webkit-appearance: none;
+            border-radius: 20px;
+            height: 100px;
+        }
+
+        .progress2::-webkit-progress-bar {
+            background-color: rgb(59, 126, 202);
+            border-radius: 20px;
+        }
+
+        .progress2::-webkit-progress-value {
+            border-radius: 20px;
+            background-color: red;
+        }
+    </style>
+
+    <div class="center">
+        <progress class="progress2" id="file" value={{percantage}} max="100"></progress>
+        <p><b>% {{percantage}}</b> oranında inmeye yakalanma ihtimaliniz bulunmakta</p>
+        <p><i>{{text}}</i></p>
+    </div>
+    </div>
+    </body>
+
+</html>

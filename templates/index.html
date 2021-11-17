@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>İnme Tespiti Formu</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 50;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      margin: 15px 0;
+      font-weight: 400;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item:hover p, .item:hover i {
+      color: #095484;
+      }
+      input:hover, select:hover, textarea:hover {
+      box-shadow: 0 0 5px 0 #095484;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      input[type="time"]::-webkit-inner-spin-button {
+      margin: 2px 22px 0 0;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: auto;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="/" method="post">
+        <h1>İnme Tahminleme Formu</h1>
+        
+        <!--<div class="formField">
+          <label for="fileToUpload">Yüz hatlarınızın belirgin olduğu bir fotoğraf yükleyiniz</label>
+          <input type="file" name="fileToUpload" id="fileToUpload"/> 
+       </div>-->
+
+        <div class="item">
+          <p>İsim - Soyisim</p>
+          <div class="name-item">
+            <input id="name" type="text" name="name" placeholder="İsim" />
+            <input id="surname" type="text" name="surname" placeholder="Soyisim" />
+          </div>
+        </div>
+
+        <div class="item">
+          <label for="gender">Cinsiyetiniz</label>
+            <select name="gender" id="gender">
+              <option value="1">Erkek</option>
+              <option value="0">Kadın</option>
+            </select>
+        </div>
+
+        <div class="item">
+          <p>Yaş</p>
+          <input type="number" id="age" name="age" min="1" max="125">
+        </div>
+
+        <div class="item">
+          <p>Boy - Kilo</p>
+          <div class="name-item">
+            <input id="height" type="number" name="height" placeholder="Boy" min="0"/>
+            <input id="weight" type="text" name="weight" placeholder="Kilo" min="0" />
+          </div>
+        </div>
+
+        <div class="item">
+          <p>Nasıl bir lokasyonda yaşamaktasınız?</p>
+          <select name="location"  id="location">
+            <option value="1">Kırsal</option>
+            <option value="0">Kentsel</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Çalıştığınız iş türü</p>
+          <select name="work_type"  id="work_type">
+            <option value="work_type_Private">Özel Sektör</option>
+            <option value="work_type_Gov_jov">Devlet</option>
+            <option value="work_type_Self-employed">Serbest meslek</option>
+            <option value="work_type_Never_worked">Çalışmıyorum</option>
+            <option value="work_type_children">Henüz çocuk (0-16 yaş)</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Hiç evlendiniz mi?</p>
+          <select name="married" id="married">
+            <option value="1">Evet</option>
+            <option value="0">Hayır</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Hipertansiyona sahip misiniz?</p>
+          <select name="hypertension" id="hypertension">
+            <option value="1">Evet</option>
+            <option value="0">Hayır</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Bir kalp hastalığınız bulunuyor mu?</p>
+          <select name="heart" id="heart"> 
+            <option value="1">Evet</option>
+            <option value="0">Hayır</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Sigara kullanıyor musunuz?</p>
+          <select name="cigaratte" id="cigaratte">
+            <option value="0">Bilinmiyor</option>
+            <option value="2">Asla</option>
+            <option value="1">Bazı zamanlar</option>
+            <option value="3">Evet</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <p>Ortalama Kandaki Glikoz Değeri (mg/dL)</p>
+          <input type="number" id="avg_glucose" name="avg_glucose" min="0">
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">Sonucu Göster</button>
+        </div>
+
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
